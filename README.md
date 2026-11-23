@@ -4,10 +4,37 @@
 
 ## 手机上怎么装
 
-1. 打开 <https://github.com/muqiu128/android-lab/actions>，点最新一次成功的 `build`
-2. 页面底部 Artifacts 里有 `apk-debug`，但手机下载 artifact 较麻烦，推荐下面这条：
-3. 打 tag 时（`v1`、`v2`…）会生成 Release，APK 可直接下载：
-   <https://github.com/muqiu128/android-lab/releases>
+**方式一（最稳，国内网络首选）**：电脑上下载 APK，用微信"文件传输助手"发到手机，点开安装。
+
+**方式二（手机直接下）**：发布页里点 `app-debug.apk`
+<https://github.com/muqiu128/android-lab/releases>
+
+> 手机直连 GitHub 可能慢或失败，失败就走方式一，别在网络上耗时间。
+
+## 怎么发新版本
+
+```bat
+call D:\AndroidDev\env.cmd
+cd /d D:\AndroidDev\repos\android-lab
+git tag -a v0.2 -m "这次改了什么"
+git push origin v0.2
+```
+
+推完 3–6 分钟，Release 里就有新的 APK 了。日常小改不用打标签，
+直接 push 到 main 也能构建，只是 APK 在 Actions 的 artifact 里，手机上不好拿。
+
+## 构建失败了怎么办
+
+手机上只会看到"没有新包"，不会告诉你哪里错。去看日志：
+
+1. 打开 <https://github.com/muqiu128/android-lab/actions>
+2. 点红色的那次运行 → 点 `Build debug APK` 那一步
+3. 报错一般在最后 30 行里，把那段发我，或者直接让我查
+
+本地能编译通过、云端却失败，八成是：
+- 引了只在本地存在的文件（`local.properties` 这类，已被 .gitignore 排除，不要提交）
+- 依赖用了国内镜像才有的东西（`settings.gradle` 里 google() 排在阿里云前面，两边都能解析）
+
 
 ## 本地怎么改（教室电脑上）
 
