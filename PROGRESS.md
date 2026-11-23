@@ -8,7 +8,7 @@
 - 工具链全在 D 盘：JDK 17 `D:\AndroidDev\jdk\jdk-17.0.2`，SDK `D:\AndroidDev\sdk`，Gradle 8.9 `D:\AndroidDev\gradle\gradle-8.9`
 - 环境变量：`call D:\AndroidDev\env.cmd`
 - 本机 `sdk.dir` 写在 `local.properties`（不进仓库）
-- 托管：GitHub `muqiu/android-lab`，SSH 密钥 `D:\AndroidDev\ssh\id_ed25519`（不进仓库）
+- 托管：GitHub `muqiu128/android-lab`，SSH 密钥 `D:\AndroidDev\ssh\id_ed25519`（不进仓库）
 - 构建：GitHub Actions，push 自动出 APK
 
 ## 当前状态

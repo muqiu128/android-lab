@@ -4,10 +4,10 @@
 
 ## 手机上怎么装
 
-1. 打开 <https://github.com/muqiu/android-lab/actions>，点最新一次成功的 `build`
+1. 打开 <https://github.com/muqiu128/android-lab/actions>，点最新一次成功的 `build`
 2. 页面底部 Artifacts 里有 `apk-debug`，但手机下载 artifact 较麻烦，推荐下面这条：
 3. 打 tag 时（`v1`、`v2`…）会生成 Release，APK 可直接下载：
-   <https://github.com/muqiu/android-lab/releases>
+   <https://github.com/muqiu128/android-lab/releases>
 
 ## 本地怎么改（教室电脑上）
 
